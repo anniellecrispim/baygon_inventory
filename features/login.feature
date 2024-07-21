@@ -13,4 +13,12 @@ Feature: Login
         Then ele será redirecionado para a página inicial do sistema
       
 
-    
+    Scenario Outline: C2
+        When o usuário inserir "<email>" ou "<password>" inválidos
+        And  o usuário clicar no botão de login
+        Then o usuário permanece na página de login
+
+        Examples:
+            | email | password |
+            | teste1807@gmail.com | 123456 |
+            | narutohokage@gmail.com | 1807 |
