@@ -7,11 +7,14 @@ Feature: Login
     Background:
         Given que o usuário está na página de login
         
-    Scenario: C1
-        When o usuário inserir "email" e "password" válidos 
+    Scenario Outline: C1
+        When o usuário inserir "<email>" e "<password>" válidos 
         And se autenticar
         Then ele será redirecionado para a página inicial do sistema
-      
+    
+        Examples:
+            | email | password |
+            | teste1807@gmail.com | 1807 |
 
     Scenario Outline: C2
         When o usuário inserir "<email>" ou "<password>" inválidos
