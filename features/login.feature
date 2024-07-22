@@ -4,20 +4,20 @@ Feature: Login
     EU QUERO fazer login no backoffice 
     PARA QUE eu possa gerenciar o estoque do e-commerce
 
-    Background:
+    #Utilizado para colocar os passos que são iguais a vários cenários
+    Background: 
         Given que o usuário está na página de login
-        
-    Scenario Outline: C1
-        When o usuário inserir "<email>" e "<password>" válidos 
+    
+    # "" - para adicionar parâmetros e incluir valores
+    Scenario: C1
+        When o usuário inserir "teste1807@gmail.com" e "1807" válidos 
         And se autenticar
         Then ele será redirecionado para a página inicial do sistema
     
-        Examples:
-            | email | password |
-            | teste1807@gmail.com | 1807 |
-
+    #Scenario Outline - utilizado para realizar vários testes no mesmo cenário com valores diferentes
+    #Scenario Outline - utilizado também para transformar cenários semelhantes em um
     Scenario Outline: C2
-        When o usuário inserir "<email>" ou "<password>" inválidos
+        When o usuário inserir "<email>" ou "<password>" inválido
         And  o usuário clicar no botão de login
         Then o usuário permanece na página de login
 
