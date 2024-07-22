@@ -1,0 +1,70 @@
+# Ambiente virtual
+venv/
+pvenv/
+
+# Arquivos de compilação do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Configurações do editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Dados de testes
+.coverage
+*.cover
+.hypothesis/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Módulos do sistema
+Pipfile.lock
+poetry.lock
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Docker
+*.env
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Distribuição / Packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ansible
+*.retry
+
+# Outros arquivos
+.DS_Store
+Thumbs.db
