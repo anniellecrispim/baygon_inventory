@@ -1,6 +1,6 @@
 #language: pt
 
-Funcionalidade: Adionar Produto
+Funcionalidade: Adionar Produto C7
   Cenário: O sistema deve permitir cadastro de produtos
 
   COMO colaborador

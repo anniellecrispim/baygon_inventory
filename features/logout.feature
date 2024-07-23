@@ -1,6 +1,6 @@
 # language: pt
 
-Funcionalidade: Logout
+Funcionalidade: Logout C10
   Cenário: O sistema deve ter um botão para deslogar o usuário do sistema
 
   COMO colaborador 
