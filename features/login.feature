@@ -12,7 +12,7 @@ Feature: Login
     Scenario: C1
         When o usuário inserir "teste1807@gmail.com" e "1807" válidos 
         And se autenticar
-        Then ele será redirecionado para a página inicial do sistema
+        Then o usuário será redirecionado para a página inicial do sistema
     
     #Scenario Outline - utilizado para realizar vários testes no mesmo cenário com valores diferentes
     #Scenario Outline - utilizado também para transformar cenários semelhantes em um

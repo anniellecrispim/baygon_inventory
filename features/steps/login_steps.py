@@ -10,7 +10,7 @@ def stepLoginPage(context):
     wait = WebDriverWait(context.browser, 10)
     
     indexLogin = wait.until(EC.url_to_be('https://projetofinal.jogajuntoinstituto.org/'))
-    assert indexLogin == True, "Página não encontrada" 
+    assert indexLogin, "Página não encontrada" 
 
 #para pegar os valores que estão no .feature
 @when(u'o usuário inserir "{email}" e "{password}" válidos')
@@ -24,12 +24,12 @@ def stepFillInputs(context, email, password):
 def stepLogin(context):
     context.browser.find_element(By.TAG_NAME,'form').submit()
 
-@then(u'ele será redirecionado para a página inicial do sistema')
+@then(u'o usuário será redirecionado para a página inicial do sistema')
 def stepIndexBackoffice(context):
     wait = WebDriverWait(context.browser, 10)
     #url_contains -> retorna true se a url atual tem a string que eu estou passando
     backoffice = wait.until(EC.url_contains('products'))
-    assert True == backoffice, "Acesso Negado" #se der problema aqui não fecha a janela
+    assert backoffice, "Acesso Negado" #se der problema aqui não fecha a janela
     time.sleep(3)   
     
 @then(u'o usuário permanece na página de login')
@@ -38,7 +38,7 @@ def stepLoginPage(context):
     wait = WebDriverWait(context.browser, 10)
     #url_to_be -> retorna true se a url atual é igual a url que eu estou passando
     indexLogin = wait.until(EC.url_to_be('https://projetofinal.jogajuntoinstituto.org/'))
-    assert True == indexLogin, "Não retornou para a página de login" 
+    assert indexLogin, "Não retornou para a página de login" 
     time.sleep(3)   
     
  
