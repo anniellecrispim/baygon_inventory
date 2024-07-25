@@ -20,13 +20,21 @@ def step_when_preencher_detalhes_do_produto(context):
     #path baseado em sistemas windows
     pathFolder = os.getcwd() #pegar o caminho do diretório atual
     splitPath = pathFolder.split("\\") #separar o caminho por \
-    splitPath.remove(splitPath[-1]) #remover o último diretório para voltar um nível
-
+    
+    imgPath = ""
     delimiter = '\\'
     newPath = delimiter.join(splitPath) + '\\img\\' #criar um novo caminho adicionando a pasta img
-    img = os.listdir(newPath) #pegando os arquivos dentro da pasta
-    imgPath = newPath + img[0] #criando o caminho da pasta com o nome da imagem que está na pasta img
+       
+    try:
+      
+        img = os.listdir(newPath) #pegando os arquivos dentro da pasta
+        
+        imgPath = newPath + img[0] #criando o caminho da pasta com o nome da imagem que está na pasta img
 
+    except FileNotFoundError as not_found:
+        print(f"\n não é possível encontrar a pasta img em {not_found.filename} \n")
+    
+    
     context.browser.find_element(By.XPATH, '/html/body/div/header/section[2]/div/header/button').click()
     context.browser.find_element(By.NAME, 'name').send_keys('Pantufa')
     context.browser.find_element(By.NAME, 'description').send_keys('Pantufa Garfield 34/36')
